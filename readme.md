@@ -24,6 +24,7 @@ or
 
 ```js
 
+const electron = require("electron");
 const ElectronPrefs = require('electron-prefs');
 const prefs = new ElectronPrefs({
   fileName: "config.js",
@@ -38,19 +39,19 @@ const prefs = new ElectronPrefs({
 prefs.set('foo', 'bar');
 console.log(prefs.get('foo'));
 //=> bar
-
+ 
 console.log(prefs.get("window"));
 //=> { width: 600, height: 300 }
-
+ 
 // use dot-notation to access nested properties 
 prefs.set('window.width', 700);
 console.log(prefs.get("window"));
 //=> { width: 700, height: 300 }
 console.log(prefs.get('window.width'));
 //=> 700
-
+ 
 prefs.delete('foo');
-console.log(config.get('foo'));
+console.log(prefs.get('foo'));
 //=> undefined 
 
 ```
@@ -238,6 +239,6 @@ console.log(config.get('foo'));
 
 ## Version:
 
-  1.0.0
+  1.0.1
 
 ---
