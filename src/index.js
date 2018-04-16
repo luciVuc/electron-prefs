@@ -6,6 +6,17 @@ const NodePrefs = require('node-prefs');
  */
 class ElectronPrefs extends NodePrefs {
   /**
+   * Returns a reference to the super class.
+   * @type {NodePrefs}
+   * @static
+   * @readonly
+   * @memberof ElectronPrefs
+   */
+  static get superClass() {
+    return NodePrefs;
+  }
+
+  /**
    * Creates an instance of `ElectronPrefs`.
    * @param  {Object} mOptions 
    * @param  {String} mOptions.fileName 

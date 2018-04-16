@@ -1,6 +1,7 @@
 const sinon = require("sinon");
 const assert = require("assert");
 const electron = require("electron");
+const NodePrefs = require("node-prefs");
 
 describe("ElectronPrefs testing", () => {
   const ElectronPrefs = require("../src/index");
@@ -17,7 +18,11 @@ describe("ElectronPrefs testing", () => {
 	it("init", () => {
 		assert.ok(typeof ElectronPrefs === "function" && ElectronPrefs.name === "ElectronPrefs");
 		assert.ok(prefs instanceof ElectronPrefs);
-	});
+  });
+  
+  it("has superClass", () => {
+    assert.ok(ElectronPrefs.superClass === NodePrefs);
+  });
 
   it("sets a new property", () => {
     assert.ok(prefs.get("foo") === undefined);

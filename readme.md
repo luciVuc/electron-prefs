@@ -81,15 +81,18 @@ console.log(prefs.get('foo'));
 
   |Type|Name|Description|Read-only|Static|
   |:---|:---|:---|:---|:---|
+  |`Object`|**`defaults`**|The default values for this instance.|Yes|No|
   |`String`|**`path`**|The full path to the configuration data file.|Yes|No|
   |`Number`|**`size`**|he number of entries in the settings file (same as `length`).|Yes|No|
   |`Number`|**`length`**|he number of entries in the settings file (same as `size`).|Yes|No|
+  |`Function`|**`superClass`**|Returns a reference to the super class.|Yes|Yes|
+
 
   ---
 
 * ### ***Methods:***
 
-  #### **`ElectronPrefs.parseDataFile(sFilePath, mDefaults)`**
+  #### **`ElectronPrefs.superClass.parseDataFile(sFilePath, mDefaults)`**
 
     Reads the settings data file and returns its content as a `JSON` object.
 
@@ -104,7 +107,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.flattenObject(oObj, sSeparator)`**
+  #### **`ElectronPrefs.superClass.flattenObject(oObj, sSeparator)`**
 
     *Flattens* nested objects into a single-depth object. For example:
     
@@ -239,6 +242,6 @@ console.log(prefs.get('foo'));
 
 ## Version:
 
-  1.0.1
+  1.0.2
 
 ---
