@@ -1,6 +1,6 @@
 {
   "name": "electron-prefs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Persist and retrieve with ease configuration and preference settings in your Electron-based apps.",
   "main": "src/index.js",
   "scripts": {
@@ -37,6 +37,6 @@
     "sinon": "^4.4.1"
   },
   "dependencies": {
-    "node-prefs": "^1.0.4"
+    "node-prefs": "^1.0.5"
   }
 }
