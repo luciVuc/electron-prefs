@@ -2,7 +2,7 @@
 
 *Persist and retrieve with ease configuration and preference settings in your `Electron`-based apps.*
 
-## Description
+## Overview
 
 As `Electron` doesn't provide a built-in mechanism to easily persist and retrieve user preferences and configuration settings, install and include the `electron-prefs` module in your `Electron` project and let it handle that for you, so you can focus on your app development.
 
@@ -62,8 +62,8 @@ console.log(prefs.get('foo'));
 
 * ### ***Constructor:***
 
-  ### **`ElectronPrefs(mOptions)`**
-  
+  **`ElectronPrefs(mOptions)`**
+
   Creates an instance of `ElectronPrefs`.
 
   **Parameters:**
@@ -87,12 +87,11 @@ console.log(prefs.get('foo'));
   |`Number`|**`length`**|he number of entries in the settings file (same as `size`).|Yes|No|
   |`Function`|**`superClass`**|Returns a reference to the super class.|Yes|Yes|
 
-
   ---
 
 * ### ***Methods:***
 
-  #### **`ElectronPrefs.superClass.parseDataFile(sFilePath, mDefaults)`**
+  **`ElectronPrefs.superClass.parseDataFile(sFilePath, mDefaults)`**
 
     Reads the settings data file and returns its content as a `JSON` object.
 
@@ -107,16 +106,16 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.superClass.flattenObject(oObj, sSeparator)`**
+  **`ElectronPrefs.superClass.flattenObject(oObj, sSeparator)`**
 
     *Flattens* nested objects into a single-depth object. For example:
-    
+
     `{ foo: 'bar', baz: { foo: 'bar' } }` 
-    
-    will turn into: 
-    
+
+    will turn into:
+
     `{ foo: 'bar', 'baz.foo': 'bar' }`.
-   
+
     **Parameters:**
 
     |Type|Name|Description|
@@ -128,7 +127,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.clear()`**
+  **`ElectronPrefs.prototype.clear()`**
 
     Removes all the settings in the settings list.
 
@@ -138,7 +137,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.delete(sKey)`**
+  **`ElectronPrefs.prototype.delete(sKey)`**
 
     Removes the specified settings item from the settings list.
 
@@ -152,7 +151,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.entries()`**
+  **`ElectronPrefs.prototype.entries()`**
 
     Returns a array containing all the `[key, value]` pairs for each settings item in the settings list.
  
@@ -162,7 +161,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.forEach(fCallback, thisArg)`**
+  **`ElectronPrefs.prototype.forEach(fCallback, thisArg)`**
 
     Executes the given function once for each `key-value` pair in the settings list.
 
@@ -177,7 +176,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.has(sKey)`**
+  **`ElectronPrefs.prototype.has(sKey)`**
 
     Returns whether the settings list contains a settings item with the given key or not.
 
@@ -191,7 +190,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.get(sKey)`**
+  **`ElectronPrefs.prototype.get(sKey)`**
 
     Gets the value of the settings item referenced by the given key in the settings list, or the whole list if no key is given.
 
@@ -205,7 +204,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.set(sKey, sValue)`**
+  **`ElectronPrefs.prototype.set(sKey, sValue)`**
 
     Sets the given value as the value of the settings item referenced by the given key in the settings list.
 
@@ -220,7 +219,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.keys()`**
+  **`ElectronPrefs.prototype.keys()`**
 
     Returns the names of all enumerable settings and preferences of this object.
 
@@ -230,7 +229,7 @@ console.log(prefs.get('foo'));
 
     ---
 
-  #### **`ElectronPrefs.prototype.values()`**
+  **`ElectronPrefs.prototype.values()`**
 
     Returns the names of all enumerable settings and preferences of this object.
 
@@ -240,8 +239,8 @@ console.log(prefs.get('foo'));
 
 ---
 
-## Version:
+## Version
 
-  1.0.3
+  1.0.4
 
 ---
