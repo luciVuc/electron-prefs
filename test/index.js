@@ -1,6 +1,5 @@
-const sinon = require("sinon");
+/* eslint no-undef: off */
 const assert = require("assert");
-const electron = require("electron");
 const NodePrefs = require("node-prefs");
 
 describe("ElectronPrefs testing", () => {
@@ -15,11 +14,11 @@ describe("ElectronPrefs testing", () => {
     }
   });
 
-	it("init", () => {
-		assert.ok(typeof ElectronPrefs === "function" && ElectronPrefs.name === "ElectronPrefs");
-		assert.ok(prefs instanceof ElectronPrefs);
+  it("init", () => {
+    assert.ok(typeof ElectronPrefs === "function" && ElectronPrefs.name === "ElectronPrefs");
+    assert.ok(prefs instanceof ElectronPrefs);
   });
-  
+
   it("has superClass", () => {
     assert.ok(ElectronPrefs.superClass === NodePrefs);
   });
@@ -39,13 +38,13 @@ describe("ElectronPrefs testing", () => {
 
   it("gets all settings", () => {
     let mObj = prefs.get();
-    assert.ok(typeof mObj === "object" && mObj.foo === "bar" && mObj["window.width"] === 600 && mObj["window.height"] === 300);    
+    assert.ok(typeof mObj === "object" && mObj.foo === "bar" && mObj["window.width"] === 600 && mObj["window.height"] === 300);
   });
 
   it("sets new value to existing settings", () => {
     assert.ok(prefs.get("window.width") === 600);
     prefs.set("window.width", 700);
-    assert.ok(prefs.get("window.width") === 700);   
+    assert.ok(prefs.get("window.width") === 700);
   });
 
   it("gets the requested item", () => {
@@ -63,7 +62,7 @@ describe("ElectronPrefs testing", () => {
     prefs.delete("foo");
     assert.ok(prefs.get("foo") === undefined);
     let mObj = prefs.get();
-    assert.ok(typeof mObj === "object" && mObj.foo === undefined && mObj["window.width"] === 700 && mObj["window.height"] === 300);    
+    assert.ok(typeof mObj === "object" && mObj.foo === undefined && mObj["window.width"] === 700 && mObj["window.height"] === 300);
   });
 
   it("has a settings item", () => {
@@ -72,38 +71,38 @@ describe("ElectronPrefs testing", () => {
     assert.ok(prefs.has("foo") === true);
     assert.ok(prefs.get("foo") === "bar");
     let mObj = prefs.get();
-    assert.ok(typeof mObj === "object" && mObj.foo === "bar" && mObj["window.width"] === 700 && mObj["window.height"] === 300);    
+    assert.ok(typeof mObj === "object" && mObj.foo === "bar" && mObj["window.width"] === 700 && mObj["window.height"] === 300);
   });
 
   it("entries", () => {
     let mObj = prefs.entries();
-    assert.ok(mObj instanceof Array && mObj[0][0] === "window.width" && mObj[0][1] === 700 && mObj[1][0] === "window.height" && mObj[1][1] === 300 &&  mObj[2][0] === "foo" && mObj[2][1] === "bar");    
+    assert.ok(mObj instanceof Array && mObj[0][0] === "window.width" && mObj[0][1] === 700 && mObj[1][0] === "window.height" && mObj[1][1] === 300 && mObj[2][0] === "foo" && mObj[2][1] === "bar");
   });
 
   it("forEach", () => {
     let mObj = [];
-    assert.ok(mObj instanceof Array && mObj.length === 0);    
+    assert.ok(mObj instanceof Array && mObj.length === 0);
     prefs.forEach((item) => {
       mObj.push(item);
     }, prefs);
-    assert.ok(mObj instanceof Array && mObj[0][0] === "window.width" && mObj[0][1] === 700 && mObj[1][0] === "window.height" && mObj[1][1] === 300 &&  mObj[2][0] === "foo" && mObj[2][1] === "bar");    
+    assert.ok(mObj instanceof Array && mObj[0][0] === "window.width" && mObj[0][1] === 700 && mObj[1][0] === "window.height" && mObj[1][1] === 300 && mObj[2][0] === "foo" && mObj[2][1] === "bar");
   });
 
   it("length and size match", () => {
     let mObj = prefs.entries();
     assert.ok(prefs.length === 3);
     assert.ok(prefs.size === 3);
-    assert.ok(mObj instanceof Array && mObj[0][0] === "window.width" && mObj[0][1] === 700 && mObj[1][0] === "window.height" && mObj[1][1] === 300 &&  mObj[2][0] === "foo" && mObj[2][1] === "bar");    
+    assert.ok(mObj instanceof Array && mObj[0][0] === "window.width" && mObj[0][1] === 700 && mObj[1][0] === "window.height" && mObj[1][1] === 300 && mObj[2][0] === "foo" && mObj[2][1] === "bar");
   });
 
   it("clears all", () => {
     let mObj = prefs.get();
     assert.ok(prefs.length === 3);
     assert.ok(prefs.size === 3);
-    assert.ok(typeof mObj === "object" && mObj.foo === "bar" && mObj["window.width"] === 700 && mObj["window.height"] === 300);    
+    assert.ok(typeof mObj === "object" && mObj.foo === "bar" && mObj["window.width"] === 700 && mObj["window.height"] === 300);
     prefs.clear();
     mObj = prefs.get();
-    assert.ok(typeof mObj === "object" && mObj.foo === undefined && mObj["window.width"] === undefined && mObj["window.height"] === undefined);    
+    assert.ok(typeof mObj === "object" && mObj.foo === undefined && mObj["window.width"] === undefined && mObj["window.height"] === undefined);
     assert.ok(prefs.length === 0);
     assert.ok(prefs.size === 0);
   });

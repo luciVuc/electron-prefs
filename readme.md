@@ -1,6 +1,6 @@
 # Electron-prefs
 
-*Persist and retrieve with ease configuration and preference settings in your `Electron`-based apps.*
+> *User preferences and configuration settings persistence feature for `Electron`-based apps.*
 
 ## Overview
 
@@ -39,20 +39,20 @@ const prefs = new ElectronPrefs({
 prefs.set('foo', 'bar');
 console.log(prefs.get('foo'));
 //=> bar
- 
+
 console.log(prefs.get("window"));
 //=> { width: 600, height: 300 }
- 
-// use dot-notation to access nested properties 
+
+// use dot-notation to access nested properties
 prefs.set('window.width', 700);
 console.log(prefs.get("window"));
 //=> { width: 700, height: 300 }
 console.log(prefs.get('window.width'));
 //=> 700
- 
+
 prefs.delete('foo');
 console.log(prefs.get('foo'));
-//=> undefined 
+//=> undefined
 
 ```
 
@@ -62,11 +62,11 @@ console.log(prefs.get('foo'));
 
 * ### ***Constructor:***
 
-  **`ElectronPrefs(mOptions)`**
+  ▸ **`new ElectronPrefs(mOptions)`**
 
   Creates an instance of `ElectronPrefs`.
 
-  **Parameters:**
+  *Parameters:*
 
   |Type|Name|Description|
   |:---|:---|:----------|
@@ -91,156 +91,156 @@ console.log(prefs.get('foo'));
 
 * ### ***Methods:***
 
-  **`ElectronPrefs.superClass.parseDataFile(sFilePath, mDefaults)`**
+  ▸ **`ElectronPrefs.superClass.parseDataFile(sFilePath, mDefaults)`**
 
     Reads the settings data file and returns its content as a `JSON` object.
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`String`|`sFilePath`|The full path to the settings data file.|
     |`Object`|`mDefaults`|A set of default values to return if it fails loading the settings data file.|
 
-    **Returns:** `Object` - A `JSON`-like object containing the settings and user preferences iub the data file.
+    ***Returns:*** `Object` - A `JSON`-like object containing the settings and user preferences iub the data file.
 
     ---
 
-  **`ElectronPrefs.superClass.flattenObject(oObj, sSeparator)`**
+  ▸ **`ElectronPrefs.superClass.flattenObject(oObj, sSeparator)`**
 
     *Flattens* nested objects into a single-depth object. For example:
 
-    `{ foo: 'bar', baz: { foo: 'bar' } }` 
+    `{ foo: 'bar', baz: { foo: 'bar' } }`
 
     will turn into:
 
-    `{ foo: 'bar', 'baz.foo': 'bar' }`.
+    `{ foo: 'bar', 'baz.foo': 'bar' }`
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`Object`|`oObj`|The object (with nested objects) to *flatten*.|
     |`String`|`sSeparator`|A string to use as separator between the keys. By default, the separator is `.` (dot).|
 
-    **Returns:** `Object` - The *flatten* object.
+    ***Returns:*** `Object` - The *flatten* object.
 
     ---
 
-  **`ElectronPrefs.prototype.clear()`**
+  ▸ **`ElectronPrefs.prototype.clear()`**
 
     Removes all the settings in the settings list.
 
-    **Parameters:** None
+    ***Parameters:*** None
 
-    **Returns:** `ElectronPrefs` - Self-reference for method chaining calls.
+    ***Returns:*** `ElectronPrefs` - Self-reference for method chaining calls.
 
     ---
 
-  **`ElectronPrefs.prototype.delete(sKey)`**
+  ▸ **`ElectronPrefs.prototype.delete(sKey)`**
 
     Removes the specified settings item from the settings list.
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`String`|`sKey`|The settings item to remove.|
 
-    **Returns:** `ElectronPrefs` - Self-reference for method chaining calls.
+    ***Returns:*** `ElectronPrefs` - Self-reference for method chaining calls.
 
     ---
 
-  **`ElectronPrefs.prototype.entries()`**
+  ▸ **`ElectronPrefs.prototype.entries()`**
 
     Returns a array containing all the `[key, value]` pairs for each settings item in the settings list.
- 
-    **Parameters:** None
 
-    **Returns:** `Array` - The `[key, value]` pairs array.
+    ***Parameters:*** None
+
+    ***Returns:*** `Array` - The `[key, value]` pairs array.
 
     ---
 
-  **`ElectronPrefs.prototype.forEach(fCallback, thisArg)`**
+  ▸ **`ElectronPrefs.prototype.forEach(fCallback, thisArg)`**
 
     Executes the given function once for each `key-value` pair in the settings list.
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`Function`|`fCallback`|The function to execute for each `key-value` pair.|
     |`Object`|`thisArg`|The value of `this` when executing the callback function.|
 
-    **Returns:** `ElectronPrefs` - Self-reference for method chaining calls.
+    ***Returns:*** `ElectronPrefs` - Self-reference for method chaining calls.
 
     ---
 
-  **`ElectronPrefs.prototype.has(sKey)`**
+  ▸ **`ElectronPrefs.prototype.has(sKey)`**
 
     Returns whether the settings list contains a settings item with the given key or not.
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`String`|`sKey`|The key to check the settings list for.|
 
-    **Returns:** `Boolean` - `true` if the settings list contains a settings item with given key, or `false` otherwise.
+    ***Returns:*** `Boolean` - `true` if the settings list contains a settings item with given key, or `false` otherwise.
 
     ---
 
-  **`ElectronPrefs.prototype.get(sKey)`**
+  ▸ **`ElectronPrefs.prototype.get(sKey)`**
 
     Gets the value of the settings item referenced by the given key in the settings list, or the whole list if no key is given.
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`String`|`sKey`|The key of a settings item in the settings list.|
- 
-    **Returns:** `any` - The value of the settings item referenced by the key in the settings list, or the whole list if no key is given.
+
+    ***Returns:*** `any` - The value of the settings item referenced by the key in the settings list, or the whole list if no key is given.
 
     ---
 
-  **`ElectronPrefs.prototype.set(sKey, sValue)`**
+  ▸ **`ElectronPrefs.prototype.set(sKey, sValue)`**
 
     Sets the given value as the value of the settings item referenced by the given key in the settings list.
 
-    **Parameters:**
+    ***Parameters:***
 
     |Type|Name|Description|
     |:---|:---|:----------|
     |`String`|`sKey`|The key of a settings item in the settings list.|
     |`any`|`sValue`|The value to assign to the settings item referenced by the key in the settings list.|
 
-    **Returns:** `ElectronPrefs` - Self-reference for method chaining calls.
+    ***Returns:*** `ElectronPrefs` - Self-reference for method chaining calls.
 
     ---
 
-  **`ElectronPrefs.prototype.keys()`**
+  ▸ **`ElectronPrefs.prototype.keys()`**
 
     Returns the names of all enumerable settings and preferences of this object.
 
-    **Parameters:** None
+    ***Parameters:*** None
 
-    **Returns:** `String[]` - The names of the enumerable settings and preferences.
+    ***Returns:*** `String[]` - The names of the enumerable settings and preferences.
 
     ---
 
-  **`ElectronPrefs.prototype.values()`**
+  ▸ **`ElectronPrefs.prototype.values()`**
 
     Returns the names of all enumerable settings and preferences of this object.
 
-    **Parameters:** None
+    ***Parameters:*** None
 
-    **Returns:** `String[]` - The values of the enumerable settings and preferences.
+    ***Returns:*** `String[]` - The values of the enumerable settings and preferences.
 
 ---
 
 ## Version
 
-  1.0.4
+  1.0.5
 
 ---
