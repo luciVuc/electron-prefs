@@ -1,6 +1,6 @@
 {
   "name": "electron-prefs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Persist and retrieve with ease configuration and preference settings in your Electron-based apps.",
   "main": "src/index.js",
   "scripts": {
@@ -31,12 +31,12 @@
   "license": "ISC",
   "homepage": "https://github.com/luciVuc/electron-prefs",
   "devDependencies": {
-    "electron": "^1.8.6",
-    "eslint": "^4.19.1",
-    "mocha": "^5.1.1",
-    "sinon": "^4.5.0"
+    "electron": "^4.0.4",
+    "eslint": "^5.13.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.3"
   },
   "dependencies": {
-    "node-prefs": "^1.0.5"
+    "node-prefs": "^1.0.7"
   }
 }
