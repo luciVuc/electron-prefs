@@ -241,6 +241,6 @@ console.log(prefs.get('foo'));
 
 ## Version
 
-  1.0.7
+  1.0.8
 
 ---
