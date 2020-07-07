@@ -31,7 +31,7 @@
   "license": "ISC",
   "homepage": "https://github.com/luciVuc/electron-prefs",
   "devDependencies": {
-    "electron": "^5.0.6",
+    "electron": "^9.1.0",
     "eslint": "^6.0.1",
     "mocha": "^6.1.4",
     "sinon": "^7.3.2"
